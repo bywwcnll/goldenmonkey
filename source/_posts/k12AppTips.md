@@ -27,3 +27,27 @@ tags: k12 tip
     })
   }
   ```
+1. `wangEditor`组件使用方法：
+  ``` JS
+  // 在main.js中引入脚本：
+  window.document.title = '上下级通知'
+  window.appCode = 'announcement'
+  ;(async () => {
+    wisLoading(true)
+    await Promise.all([
+      setCorpId(),
+      setWechatSDK({ hideShareBtn: true }),
+      loadScript(window.HOST + '/static/wangEditor/wangEditor.min.js')
+    ])
+    /* eslint-disable no-new */
+    new Vue({
+      router,
+      store,
+      render: h => h(App)
+    }).$mount('#app')
+  })()
+  
+  //  使用方法：
+  this.$refs.wisEditor.setHtml(content.replace(/<_wisbr>/g, '<br>'))
+  this.$refs.wisEditor.getHtml().replace(/(\n|<\/?br>)/g, '<_wisbr>')
+  ```
