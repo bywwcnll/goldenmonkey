@@ -51,3 +51,6 @@ tags: k12 tip
   this.$refs.wisEditor.setHtml(content.replace(/<_wisbr>/g, '<br>'))
   this.$refs.wisEditor.getHtml().replace(/(\n|<\/?br>)/g, '<_wisbr>')
   ```
+1. 兼容性说明：  
+  pc组件页面支持到IE10+
+  移动组件页面只支持chrome70+  
