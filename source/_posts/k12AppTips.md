@@ -54,3 +54,10 @@ tags: k12 tip
 1. 兼容性说明：  
   pc组件页面支持到IE10+
   移动组件页面只支持chrome70+  
+1. 使用`mixins`时，请将js文件必须放置在mixins目录下(没有可在src/components下创建)  
+  0.0.4版本的`babel-plugin-k12swagger`处理机制如下：
+  ``` JS
+  if (/(\.vue|mixins\/\w+\.js)$/.test(filename)) {
+    path.traverse(ObjectPropertyVisitor)
+  }
+  ```
