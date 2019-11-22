@@ -61,3 +61,24 @@ tags: k12 tip
     path.traverse(ObjectPropertyVisitor)
   }
   ```
+1. k12-upload使用问题解决：  
+  删除图片时，一直删除的是第一张图片的原因如下  
+  ``` JS
+  onDeleteAddedImg (data) {
+    let delIndex = this.formData.map(el => el.localId).indexOf(data.localId)
+    if (delIndex > -1) {
+      this.formData.splice(delIndex, 1)
+    }
+  }
+  ```
+  解决方法：在给`defaultFormData`赋值时添加`localId`属性
+  ``` JS
+  this.defaultFormData = (tmp.ossObjects || []).map(el => {
+    return {
+      objectId: el.objectId,
+      localId: el.objectId,
+      thumbnailUrl: el.thumbnailUrl,
+      srcData: el.previewUrl
+    }
+  })
+  ```
