@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 有用的到小弟的地方请开口
-subtitle: ''
-description: ''
+title: 小轩窗
+subtitle: 有用的到小弟的地方请尽管开口
+description: 
 keywords:
 author: Gaven
 language: zh-CN
@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://bywwcnll.netlify.app
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

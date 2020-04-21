@@ -11,7 +11,7 @@
     </div>
   {%- endif %}
 
-  <article itemscope itemtype="http://schema.org/Article">
+  <article itemscope itemtype="https://schema.org/Article">
     <header class="post-header">
 
       <div class="post-meta">

@@ -232,7 +232,7 @@ hello world
 
 链接名和包围它的中括号之间不能有空格，但链接名中间可以有空格，如：
 
-[百 度](http://www.baidu.com "百 度")
+[百 度](https://www.baidu.com "百 度")
 
 ### MD040 - Fenced code blocks should have a language specified
 
