@@ -1,7 +1,9 @@
 ---
 title: markdownlint配置文档
 date: 2020-04-21 10:30:00
-tags: markdown rules
+tags:
+- markdown
+- rules
 ---
 
 本文主要参考markdownlint的rules文档，对每一个规则都进行了说明，指明了一些规则中可以设置的参数，便于用户设置相应的规则。

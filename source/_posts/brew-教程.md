@@ -1,7 +1,8 @@
 ---
 title: brew 教程
 date: 2020-02-26 10:34:22
-tags: brew
+tags: 
+- brew
 ---
 ## 替换源
 

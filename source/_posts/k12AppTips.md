@@ -1,7 +1,8 @@
 ---
 title: k12AppTips
 date: 2019-06-17 10:10:19
-tags: k12 tip
+tags: 
+- k12
 ---
 
 ## k12App开发注意事项
