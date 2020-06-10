@@ -9,17 +9,26 @@ tags:
 ## Caddyfile
 
 ```bash
-http://testapp.com {
-  # tls internal
-  # file_server browse
-
+(wysource) {
   @wysource {
     path_regexp ^\/(open|api|static\/wangEditor)\/
   }
   reverse_proxy @wysource http://demo.wysource.com.cn {
     header_up Host demo.wysource.com.cn
   }
-  reverse_proxy * http://localhost:8080
+}
+
+# tls internal
+# file_server browse
+
+http://app.try {
+  import wysource
+  reverse_proxy * http://app.try:8080
+}
+
+http://app1.try {
+  import wysource
+  reverse_proxy * http://app.try:8081
 }
 ```
 
@@ -28,11 +37,7 @@ http://testapp.com {
 ```js
 module.exports = {
   devServer: {
-    host: 'testapp.com',
-    onListening: function(server) {
-      const port = server.listeningApp.address().port
-      console.log('Listening on port:', port)
-    }
+    host: 'app.try'
   }
 }
 ```
