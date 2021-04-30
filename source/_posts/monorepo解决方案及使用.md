@@ -131,6 +131,13 @@ bit remote add ssh://bit@bitserver:22:/path/to/myscope
 
 - 将客户端的`id_rsa.pub`添加到服务端的`authorized_keys`中实现免密登录, `authorized_keys`文件权限设置成600
 
+- 客户端无法免登陆添加remote scope，可以运行以下命令。其他问题可以查看 [这里](https://github.com/teambit/bit-docker/issues/1)
+
+  ``` bash
+  eval "$(ssh-agent -s)"
+  ssh-add -K ~/.ssh/id_rsa
+  ```
+
 - 客户端添加scope出现`/path/to/myscope not found`时，可查看`~/Library/Caches/Bit/logs/debug.log`日志，一般是由于`bit`命令未找到，可`ln -s`创建命令软链接
 
   原因在服务端的.bashrc里，[解决方案](https://github.com/teambit/bit/issues/1236)
