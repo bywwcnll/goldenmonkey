@@ -77,3 +77,20 @@ devServer: {
   }
 }
 ```
+
+### 设置vue.config.ts
+
+``` js
+server: {
+   host: 'app3.try',
+   https: {
+      key: fs.readFileSync('/Users/ares/my_certificate/ca.key'),
+      cert: fs.readFileSync('/Users/ares/my_certificate/ca.crt')
+   },
+   port: 8080,
+}
+```
+
+### Safari开启wss(Websocket安全模式)测试功能, chrome上暂时无法测试
+
+> 在“设置”>“ Safari”>“高级”>“实验性功能”>“ NSURLSession Websocket”中启用NSURLSession Websocket。应该可以在iOS 13.4.1以上版本上使用。
