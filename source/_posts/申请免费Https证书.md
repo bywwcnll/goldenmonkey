@@ -46,7 +46,7 @@ tags:
 1. 获取证书
 
     ``` bash
-    certbot certonly --webroot -w /usr/share/nginx/html -d security.wysource.com.cn
+    certbot certonly --webroot -w /usr/share/nginx/html -d security.wysource.com.cn --preferred-chain "ISRG Root X1"
    ```
    
 1. 修改配置
@@ -56,7 +56,7 @@ tags:
         listen 80;
         server_name security.wysource.com.cn;
         listen 443 ssl;
-        ssl_certificate /etc/letsencrypt/live/security.wysource.com.cn/cert.pem;
+        ssl_certificate /etc/letsencrypt/live/security.wysource.com.cn/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/security.wysource.com.cn/privkey.pem;
    
         location / {
