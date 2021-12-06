@@ -25,7 +25,7 @@ tags:
   })
   ```
 
-1. 为了是搜索人员的接口能处理大参数传递，需要把vuex/modules/common.js中的`searchUserByKeyword`改成post方式：
+1. 为了使搜索人员的接口能处理大参数传递，需要把vuex/modules/common.js中的`searchUserByKeyword`改成post方式：
 
   ``` JS
   async searchUserByKeyword ({ commit, state }, data) {
@@ -138,3 +138,20 @@ tags:
     /* ... */
   }
   ```
+
+1. `k12vux`如何在最新结构中更改主题样式
+
+   ``` JS
+   // vue.config.js
+   module.exports = {
+    css: {
+      loaderOptions: {
+        less: {
+          modifyVars: {
+            'theme-color': 'red',
+          },
+        }
+      }
+    },
+   }
+   ```
