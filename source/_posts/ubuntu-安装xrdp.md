@@ -9,9 +9,25 @@ tags:
 > 直接下载一键安装脚本，[地址](https://c-nergy.be/downloads/xRDP/xrdp-installer-1.2.3.zip)
 
 ``` bash
-$ wget https://www.c-nergy.be/downloads/xRDP/xrdp-installer-1.2.3.zip
-$ unzip xrdp-installer-1.2.3.zip 
-$ chmod +x  ~/Downloads/xrdp-installer-1.2.3.sh
+wget https://www.c-nergy.be/downloads/xRDP/xrdp-installer-1.2.3.zip
+unzip xrdp-installer-1.2.3.zip 
+chmod +x  ~/Downloads/xrdp-installer-1.2.3.sh
+```
+
+### 解决黑屏问题
+```bash
+sudo vim /etc/xrdp/startwm.sh
+```
+```bash
+if test -r /etc/profile; then
+        . /etc/profile
+fi
+# 此位置加入下面两行代码
+unset DBUS_SESSION_BUS_ADDRESS
+unset XDG_RUNTIME_DIR
+
+test -x /etc/X11/Xsession && exec /etc/X11/Xsession
+exec /bin/sh /etc/X11/Xsession
 ```
 
 ``` bash
