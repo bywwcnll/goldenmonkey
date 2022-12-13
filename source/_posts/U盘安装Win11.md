@@ -1,7 +1,9 @@
 ---
 title: U盘安装Win11
 date: 2022-12-08 10:33:32
-tags: win11
+tags: 
+- win11
+- os
 ---
 
 ## 跳过TPM检测
